@@ -26,6 +26,7 @@ public class CounterSupervisor {
 		try {
 			
 			// Asks the supervisor to create the child actor and returns a reference
+            // so it is in the context of the supervisor
 			scala.concurrent.Future<Object> waitingForCounter = ask(supervisor, Props.create(CounterActor.class), 5000);
 			counter = (ActorRef) waitingForCounter.result(timeout, null);
 

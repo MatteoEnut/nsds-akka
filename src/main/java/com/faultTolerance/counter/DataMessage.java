@@ -2,7 +2,7 @@ package com.faultTolerance.counter;
 
 public class DataMessage {
 
-	private int code;
+	private int code; // either have different message types or different codes
 	
 	public int getCode() {
 		return code;

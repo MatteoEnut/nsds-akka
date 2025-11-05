@@ -15,7 +15,9 @@ public class CounterActor extends AbstractActor {
 
 	@Override
 	public Receive createReceive() {
-		return receiveBuilder().match(DataMessage.class, this::onMessage).build();
+
+        return receiveBuilder()
+                .match(DataMessage.class, this::onMessage).build();
 	}
 
 	void onMessage(DataMessage msg) throws Exception {
