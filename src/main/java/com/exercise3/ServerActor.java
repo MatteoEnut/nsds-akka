@@ -2,6 +2,8 @@ package com.exercise3;
 
 import akka.actor.AbstractActor;
 import akka.actor.Actor;
+import akka.actor.Props;
+import com.faultTolerance.counter.CounterActor;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -26,5 +28,9 @@ public class ServerActor extends AbstractActor {
 
     private void onPutMsg(PutMsg putMsg) {
         contacts.put(putMsg.getName(), putMsg.getEmail());
+    }
+
+    static Props props() {
+        return Props.create(ServerActor.class);
     }
 }
